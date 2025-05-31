@@ -21,30 +21,32 @@ async function chargerGalerie(action){
     displayGallery(galerie);
 }
 
-//événement pour charger la galerie par défaut
-document.querySelector('#load-gallery').addEventListener('click', async () =>{
-    const galerie = await load();
-    displayGallery(galerie);
-});
-
 //événement pour charger la première page de la galerie
 document.querySelector('#first').addEventListener('click', async () =>{
     chargerGalerie(first);
+    document.querySelector('#photo_detail').style.display = 'block';
+    document.querySelector('#fermer').style.display = 'block';
 });
 
 //événement pour charger la page précédante de la galerie
 document.querySelector('#prev').addEventListener('click', async () =>{
     chargerGalerie(prev);
+    document.querySelector('#photo_detail').style.display = 'block';
+    document.querySelector('#fermer').style.display = 'block';
 });
 
 //événement pour charger la page suivante de la galerie
 document.querySelector('#next').addEventListener('click', async () =>{
     chargerGalerie(next);
+    document.querySelector('#photo_detail').style.display = 'block';
+    document.querySelector('#fermer').style.display = 'block';
 });
 
 //événement pour charger la dernière page de la galerie
 document.querySelector('#last').addEventListener('click', async () =>{
     chargerGalerie(last);
+    document.querySelector('#photo_detail').style.display = 'block';
+    document.querySelector('#fermer').style.display = 'block';
 });
 
 //événement pour gérer l'affichage de l'image choisi
