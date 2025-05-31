@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index td8 : fetch</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<main id="photo">
+	<button id="load-gallery">Charger la galerie</button>
+	<div id="navigation">
+		<button id="first">Premier</button>
+		<button id="prev">Précédent</button>
+		<button id="next">Suivant</button>
+		<button id="last">Dernier</button>
+	</div>
+	<section id="galerie">
+
+	</section>
+	<section id="photo_detail">
+		
+		<button id="fermer">Fermer</button>
+	</section>
+</main>
+
+<script id="photoTemplate" type="text/x-handlebars-template">
+  <section id="galerie">
+	<div>
+	{{#each galleryData.photos}}
+			<img src={{photo.thumbnail.href}} id={{photo.id}} alt="photo.titre" class="photo">
+	{{/each}}
+	</div>
+  </section>
+
+
+  <section id="photo_detail">
+   <img src={{photo.photo.url.href}}>
+    <h4>{{photo.photo.titre}}</h4>
+      <p>{{photo.photo.descr}}</p>
+	  <p>{{photo.photo.type}}, {{photo.photo.width}} x {{photo.photo.height}}</p>
+	  <h4 id="la_categorie">categorie : {{categorie.categorie.nom}}</h4>
+	  <h4>commentaires : </h4>
+	  <ul id="les_commentaires">
+			{{#each com.comments}}
+		  		<li>{{pseudo}} : {{content}}</li>
+			{{/each}}
+	  </ul>
+	</section>
+</script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+<script  type="module" src='js/index.js' defer ></script>
+</body>
+</html>
